@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="API中转使用教程：Codex CLI、Codex App 安装、CC Switch 与手动配置指南。"><title>API中转使用教程</title><style>
+:root{color-scheme:light;--ink:#1c283c;--accent:#2359b7}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;background:#f5f7fb;color:var(--ink);font:16px/1.85 system-ui,-apple-system,"Segoe UI","Microsoft YaHei",sans-serif}header{background:#132943;color:white;padding:42px max(24px,calc((100vw - 1200px)/2))}header p{margin:0;color:#b9cce3;font-size:14px}header strong{font-size:28px;letter-spacing:.03em}.layout{display:grid;grid-template-columns:250px minmax(0,850px);gap:40px;max-width:1200px;margin:36px auto;padding:0 24px}aside{align-self:start;position:sticky;top:24px;padding:20px 0}aside strong{font-size:14px;color:#64748b}aside a{display:block;color:#42526b;text-decoration:none;font-size:14px;line-height:1.6;padding:10px 0;border-bottom:1px solid #e2e8f0}a{color:var(--accent);overflow-wrap:anywhere}a:hover{text-decoration:underline}main{background:white;padding:38px 46px;border:1px solid #e4e9f1;border-radius:12px;min-width:0}h1{font-size:30px;line-height:1.4;margin:0 0 24px}h2{font-size:24px;margin:48px 0 20px;padding-top:12px;border-top:1px solid #e5eaf2}h3{font-size:20px;margin-top:32px}h4{font-size:18px;margin-top:28px}p{margin:16px 0}img{display:block;max-width:100%;height:auto;margin:24px auto;border:1px solid #e2e8f0;border-radius:8px}pre{padding:20px;background:#17283c;color:#e7eef8;border-radius:8px;overflow:auto;font:14px/1.7 ui-monospace,Consolas,monospace}footer{text-align:center;color:#64748b;padding:12px 24px 36px;font-size:14px}@media(max-width:850px){header{padding:28px 20px}header strong{font-size:24px}.layout{display:block;margin:16px auto;padding:0 12px}aside{position:static;padding:14px 10px 24px}aside a{padding:6px 0}main{padding:26px 20px}h1{font-size:26px}h2{font-size:22px}}
+</style></head><body><header><p>MIANTUAN · 使用指南</p><strong>API中转使用教程</strong></header><div class="layout"><aside><strong>本页目录</strong><a href="#codex-cliapp">如何安装codex cli/app？</a>
+<a href="#codex-clicodex-appapi">如何在Codex Cli和Codex App中使用面团API？</a>
+<a href="#cc-switch">使用开源软件CC switch帮助管理（方法一，推荐）</a>
+<a href="#section">手动配置（方法二）</a>
+<a href="#section-1">部分报错及解决方法</a></aside><main><h1 id="api">API中转使用教程</h1>
+<p><a href="https://api.miantuan.ltd/">https://api.miantuan.ltd/</a></p>
+<p>API中转站提供的API可用于国内网络环境不翻墙使用Codex Cli、Codex App及Opencode、OpenClaw等，当然也可用于在Python代码中调用API。</p>
+<h2 id="codex-cliapp">如何安装codex cli/app？</h2>
+<p>如果您有翻墙/梯子，强烈建议上官网直接安装codex app，根据您的系统下载即可。</p>
+<p><a href="https://openai.com/zh-Hans-CN/codex/">https://openai.com/zh-Hans-CN/codex/</a></p>
+<p>对于codex cli，您需要先安装Node.js</p>
+<p><a href="http://nodejs.org/zh-cn?utm_source=chatgpt.com">http://nodejs.org/zh-cn?utm_source=chatgpt.com</a></p>
+<p>安装完成Node.js后，打开终端，输入</p>
+<pre><code class="language-Bash">node -v
+npm -v
+</code></pre>
+<p>查看是否正确安装。</p>
+<p>接着输入以下命令，并等待安装（这一步最好挂梯子）</p>
+<pre><code class="language-Bash">npm install -g @openai/codex
+</code></pre>
+<p>安装完成后，输入</p>
+<pre><code class="language-Bash">codex
+</code></pre>
+<p>即可打开codex cli，此时您尚未配置API，打开后可按ctrl+c先退出，按照下面操作进行配置。</p>
+<p>如果您在输入安装命令时卡住，建议使用阿里云镜像，也即下面这个命令</p>
+<pre><code class="language-Bash">npm install -g @openai/codex --registry=https://registry.npmmirror.com
+</code></pre>
+<h2 id="codex-clicodex-appapi">如何在Codex Cli和Codex App中使用面团API？</h2>
+<h3 id="cc-switch">使用开源软件CC switch帮助管理（方法一，推荐）</h3>
+<p>非常推荐使用CC swtich，您可以随意地切换不同中转站/官方的订阅，保持本地长久会话不被破坏。</p>
+<p>首先安装CC switch
+https://ccswitch.io/zh/</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%201.png" alt="image.png" /></p>
+<p>下面讲一下如何导入我们的某个密钥配置</p>
+<p>首先进入你的账号，然后创建API key。</p>
+<p>这里点击“创建密钥”</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%206.png" alt="image.png" /></p>
+<p>这里选择codex分组即可（如您之后订阅了套餐，请新建密钥选择套餐的专属分组）</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/step_3.png" alt="step_3.png" /></p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/step_4%201.png" alt="step_4.png" /></p>
+<p>接着点击“导入到CCS”这个按钮。</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%204.png" alt="image.png" /></p>
+<p>允许即可！</p>
+<p>这里点“导入”确定。</p>
+<p>OK，我们现在有两个配置了。</p>
+<p>可以改一下名，比如我把刚导入的改为test，然后点击启动，就可以自动切换密钥啦！（这里的查询失败是bug，不影响）</p>
+<p>如果您还有官方订阅（或其他中转站），可以点击右上角的➕号</p>
+<p>选择Openai Official</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%203.png" alt="image.png" /></p>
+<p>点击添加</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%2012.png" alt="image.png" /></p>
+<p>再点击启用官方订阅。</p>
+<p>随后打开中转，随便找个文件夹，输入codex logout。</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%208.png" alt="image.png" /></p>
+<p>出现successfully logged out之后，再输入codex，利用网页认证登录您的gpt账号即可，会话将不会消失。</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%2011.png" alt="image.png" /></p>
+<p>如您需要切换回中转站，可以点击中转站的启用即可。</p>
+<h3 id="section">手动配置（方法二）</h3>
+<p>首先进入你的账号，然后创建API key。</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/step_1.png" alt="step_1.png" /></p>
+<p>这里点击“创建密钥”</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/step_2.png" alt="step_2.png" /></p>
+<p>这里选择codex分组即可（如您订阅了套餐，请新建密钥选择套餐的专属分组）</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/step_3%201.png" alt="step_3.png" /></p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/step_4.png" alt="step_4.png" /></p>
+<p>这里点击使用密钥</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/step_5.png" alt="step_5.png" /></p>
+<p>复制弹出的界面的两个配置，记住相对应的路径（如果没有该名字文件，则创建文件），然后把内容直接全部复制进去，保存即可。</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/step_7.png" alt="step_7.png" /></p>
+<p>下面演示一下mac电脑如何找到这个文件夹和目录</p>
+<h4 id="macoslinux">macos/linux配置</h4>
+<p>首先打开访达，找到这个小房子图标，也就是Home目录，点进去。</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%2010.png" alt="image.png" /></p>
+<p>这个时候你还看不到名字叫.codex的文件夹，所以需要按command+shift+.（也就是“.”这个键！！），这样你就能看到隐藏文件夹.codex了，咱们点进去。</p>
+<p>如果你这一步之后还是没在隐藏文件夹找到.codex文件夹，说明你codex还没初始化，请先打开一次codex或者打开一次cli创建文件夹。</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%202.png" alt="image.png" /></p>
+<p>可以看到这两个我们需要的文件了（如果没有请自己创建这两个同名文件）。</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image.png" alt="image.png" /></p>
+<p>把我们的内容复制进去配置完成后直接在终端</p>
+<pre><code class="language-Bash">codex
+</code></pre>
+<p>或者直接打开codex app即可使用codex cli或者codex app了，记得重启一下。</p>
+<p>后续可以在Codex cli（输入指令/model）或者codex app（直接在对话框下面选择切换）切换模型为gpt-5.5，现在默认配置是选择gpt-5.4。</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%207.png" alt="image.png" /></p>
+<p>若您是winodws或者linux系统，配置方法也类似，如您还存在其他问题，可以优先询问一下Deepseek，也欢迎在群内咨询～</p>
+<h4 id="windows">windows配置</h4>
+<p>对于windows系统，可以直接按Win键+R键，然后输入%userprofile%\.codex并直接回车，可以直接打开.codex目录。</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%205.png" alt="image.png" /></p>
+<h2 id="section-1">部分报错及解决方法</h2>
+<p>1.</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/fbd3493d3bd8246017d5af88d4156bec.jpg" alt="fbd3493d3bd8246017d5af88d4156bec.jpg" /></p>
+<p>出现这个情况大概率是你config.toml中自动压缩的窗口大小设置的不合理</p>
+<p>建议改成这样，就不会出现这种问题了</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/image%209.png" alt="image.png" /></p>
+<p>2.</p>
+<p><img loading="lazy" decoding="async" src="%E5%9B%BE%E7%89%87%E5%92%8C%E9%99%84%E4%BB%B6/132784da2942f4ad43f350f764de2b38.png" alt="132784da2942f4ad43f350f764de2b38.png" /></p>
+<p>这说明您现在的密钥所在分组下额度不足，如果您刚开通了订阅套餐，请新建一个该订阅分组下的密钥，然后用CC switch切换即可。</p>
+<p>文档原作者：喵api miaoapi</p>
+
+</main></div><footer>文档原作者：喵api miaoapi · <a href="#">返回顶部</a></footer></body></html>
